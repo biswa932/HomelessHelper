@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomelessHelper.View.Menu"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="AppLogo" HorizontalOptions="Center" Grid.Row="0"/>
+                <Image Source="MenuShelter" HorizontalOptions="Center" Grid.Row="1" HeightRequest="150" WidthRequest="150">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding FindShelterCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+                <Image Source="MenuHelp" HorizontalOptions="Center" Grid.Row="2" HeightRequest="150" WidthRequest="150">
+                <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding FindHealthcareCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+                <Image Source="MenuContribute" HorizontalOptions="Center" Grid.Row="3" HeightRequest="150" WidthRequest="150">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding FindContributeCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+                <Image Source="MenuContact" HorizontalOptions="Center" Grid.Row="4" HeightRequest="150" WidthRequest="150">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding NavigateToContactCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

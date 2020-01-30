@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomelessHelper.Android", "HomelessHelper\HomelessHelper.Android\HomelessHelper.Android.csproj", "{1C14EC84-6E1D-46B0-AFD2-CB794ADEF212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomelessHelper", "HomelessHelper\HomelessHelper\HomelessHelper.csproj", "{1FD77E21-E576-4117-A844-C4CCE8BA6F48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C14EC84-6E1D-46B0-AFD2-CB794ADEF212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C14EC84-6E1D-46B0-AFD2-CB794ADEF212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C14EC84-6E1D-46B0-AFD2-CB794ADEF212}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1C14EC84-6E1D-46B0-AFD2-CB794ADEF212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C14EC84-6E1D-46B0-AFD2-CB794ADEF212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C14EC84-6E1D-46B0-AFD2-CB794ADEF212}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1FD77E21-E576-4117-A844-C4CCE8BA6F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FD77E21-E576-4117-A844-C4CCE8BA6F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FD77E21-E576-4117-A844-C4CCE8BA6F48}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1FD77E21-E576-4117-A844-C4CCE8BA6F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FD77E21-E576-4117-A844-C4CCE8BA6F48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FD77E21-E576-4117-A844-C4CCE8BA6F48}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {751FB15D-4305-4A1F-B896-786BBF7B95E6}
+	EndGlobalSection
+EndGlobal

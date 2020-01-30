@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomelessHelper.View.Loading"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Padding="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image Source="AppLogo" VerticalOptions="StartAndExpand" HorizontalOptions="Center"/>
+            <Image Source="AppLoadingLogo" HeightRequest="100"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+            <StackLayout VerticalOptions="EndAndExpand"  HorizontalOptions="Center">
+                <Label Text="You need an internet connection to run this app!" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsRetryVisible}"/>
+                <Image Source="RetryButton" HeightRequest="70" WidthRequest="120" IsVisible="{Binding IsRetryVisible}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding RetryCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <ActivityIndicator IsRunning="{Binding IsActivityIndicatorRunning}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

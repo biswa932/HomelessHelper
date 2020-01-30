@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomelessHelper.View.ListCities"
+             x:Name="ListCitiesView"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <Image Source="AppLogo"/>
+            <Image Source="{Binding ServiceType}"/>
+            <ScrollView VerticalOptions="FillAndExpand">
+                <ListView Margin="10" ItemsSource="{Binding Cities}" SelectionMode="Single" SeparatorColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="{Binding}" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Body"/>
+                                    <Image Source="search" VerticalOptions="Center" HeightRequest="17" WidthRequest="17"/>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference ListCitiesView},Path=BindingContext.SearchCommand}" CommandParameter="{Binding}"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

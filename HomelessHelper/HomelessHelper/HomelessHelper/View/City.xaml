@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomelessHelper.View.City"
+             x:Name="CityView"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="AppLogo" HorizontalOptions="Center" Grid.Row="0"/>
+            <Image Source="{Binding HelpType}" HeightRequest="50" WidthRequest="50" Grid.Row="1"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Grid.Row="2">
+                <Image Source="Location" HeightRequest="20" WidthRequest="20"/>
+                <Label Text="{Binding CityName}" FontSize="Body" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Margin="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3">
+                <ListView VerticalOptions="FillAndExpand" SeparatorColor="Black" HorizontalOptions="FillAndExpand" HasUnevenRows="True" ItemsSource="{Binding Organizations}" SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Margin="0,0,0,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Body" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                                    <Label Text="{Binding Phone}" FontSize="Body"  VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+                                    <Image Source="CallButton" Grid.Row="1" Grid.Column="1" HeightRequest="40" WidthRequest="120"  VerticalOptions="Center">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer NumberOfTapsRequired="1"  Command="{Binding Source={x:Reference CityView},Path=BindingContext.CallCommand}" CommandParameter="{Binding Phone}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label Text="{Binding Website}" FontSize="Small" TextDecorations="Underline" TextColor="DarkBlue"  VerticalTextAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+                                    <Image Source="BrowseButton" HeightRequest="40" WidthRequest="120" Grid.Row="2" Grid.Column="1" VerticalOptions="Center">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={x:Reference CityView},Path=BindingContext.BrowseCommand}" CommandParameter="{Binding Website}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label Text="{Binding Address}" FontSize="Body"  VerticalTextAlignment="Center" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
